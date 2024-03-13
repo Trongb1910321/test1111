@@ -10,6 +10,8 @@ services:
       - db1
     stdin_open: true
     tty: true
+    volumes:
+      - ".:/var/www/html"
   db:
     image: mysql:8.0
     environment:
@@ -17,6 +19,8 @@ services:
       - MYSQL_ROOT_PASSWORD=root
     networks:
       - db1
+    ports:
+      - 3306:3306
     volumes:
       - ./pet.sql:/docker-entrypoint-initdb.d/pet.sql
   phpmyadmin:

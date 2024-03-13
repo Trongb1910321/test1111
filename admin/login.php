@@ -4,10 +4,10 @@ include_once '../classes/adminlogin.php';
 <?php
 $class = new adminlogin();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-	$adminUser = $_POST['adminUser'];
+	$adminEmail = $_POST['adminEmail'];
 	$adminPass = $_POST['adminPass'];
 
-	$login_check = $class->login_admin($adminUser, $adminPass);
+	$login_check = $class->login_admin($adminEmail, $adminPass);
 }
 ?>
 
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						}
 						?></span>
 				<div>
-					<input type="text" placeholder="Username" required="" name="adminUser" />
+					<input type="text" placeholder="Email" required="" name="adminEmail" />
 				</div>
 				<div>
 					<input type="password" placeholder="Password" required="" name="adminPass" />

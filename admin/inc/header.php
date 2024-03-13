@@ -1,15 +1,3 @@
-<?php
-include '../lib/session.php';
-Session::checkSession();
-?>
-
-
-<?php
-header("Cache-Control: no-cache, must-revalidate");
-header("Pragma: no-cache");
-header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
-header("Cache-Control: max-age=2592000");
-?>
 <!DOCTYPE html>
 <html>
 
@@ -70,10 +58,10 @@ header("Cache-Control: max-age=2592000");
                     </div>
                     <div class="floatleft marginleft10">
                         <ul class="inline-ul floatleft">
-                            <li>Hello <?php echo Session::get('adminName') ?> </li>
+                            <li>Hello <?php echo Session::get('adminEmail') ?> </li>
                             <?php
                             if (isset($_GET['action']) && $_GET['action'] == 'logout') {
-                                Session::destroy();
+                                Session::destroy_2();
                             }
                             ?>
                             <li><a href="?action=logout">Logout</a></li>

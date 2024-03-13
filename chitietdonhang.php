@@ -34,7 +34,9 @@ if (isset($_GET['confirmid'])) {
         <tbody>
             <?php
             $customer_id = Session::get('customer_id');
+            // print_r($customer_id);die;
             $get_cart_ordered = $ct->get_cart_ordered($customer_id);
+            // print_r($customer_id);die;
             if ($get_cart_ordered) {
                 $i = 0;
                 $qty = 0;

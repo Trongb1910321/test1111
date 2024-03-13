@@ -1,7 +1,4 @@
 <?php
-/**
-*Session Class
-**/
 class Session{
 public static function init(){
 if (version_compare(phpversion(), '5.4.0', '<')) {
@@ -37,6 +34,7 @@ self::init();
 if (self::get("adminlogin")== false) {
 self::destroy();
 header("Location:login.php");
+// echo '<script>document.location.href = "./login.php"</script>';
 }
 }
 
@@ -51,6 +49,11 @@ public static function destroy(){
 session_destroy();
 header("Location:login.php");
 }
+
+public static function destroy_2(){
+session_destroy();
+echo '<script>document.location.href = "./login.php"</script>';
+    }
 public static function destroy_1(){
     session_destroy();
     // header("Location:login.php");

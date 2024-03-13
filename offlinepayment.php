@@ -6,6 +6,7 @@ include_once 'inc/header.php';
 if (isset($_GET['orderid']) && $_GET['orderid'] == 'order') {
     $customer_id = Session::get('customer_id');
     $insertOrder = $ct->insertOrder($customer_id);
+    // print_r($insertOrder);die;
     // $delCart = $ct->del_all_data_cart(); // bo dong nay
     echo '<script>document.location.href = "./success.php"</script>';
 }

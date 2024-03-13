@@ -111,11 +111,11 @@ class cart extends Database
     if ($stmt) {
       while ($result = $stmt->fetch()) { // lấy dư lieu đe truyen
         $cartId = $result['cartId'];
-
-
-        $query_order = "INSERT INTO pet.tbl_order (`cartId`) VALUES (?)";
+        
+        $query_order = "INSERT INTO pet.tbl_order(cartId) VALUES (?)";
         $insert_order = $this->connect()->prepare($query_order);
         $insert_order->execute([$cartId]);
+
 
 
         $query_upCart_status = "UPDATE pet.tbl_cart SET status_cart= ? WHERE cartId = ? ";

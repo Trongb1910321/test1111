@@ -24,7 +24,6 @@ class adminlogin extends Database
 
         $sql = "SELECT * FROM pet.tbl_admin WHERE adminUser = ? AND adminPass = ? ";
         $stmt = $this->connect()->prepare($sql);
-
         $stmt->execute([$adminUser, md5($adminPass)]);
         $count = $stmt->rowCount();
         if (empty($adminUser) || empty($adminPass)) {
@@ -38,7 +37,7 @@ class adminlogin extends Database
                 Session::set('adminId', $admin_User['adminID']);
                 Session::set('adminUser', $admin_User['adminUser']);
                 Session::set('adminName', $admin_User['adminName']);
-                echo '<script>document.location.href = "./index.php"</script>';
+                echo '<script>document.location.href = "./.php"</script>';
             } else {
                 $alert = "Tài khoản và mật khẩu không khớp!";
                 return $alert;

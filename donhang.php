@@ -11,7 +11,7 @@ if (isset($_GET['cartid'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
   $cartId = $_POST['cartId'];
   $quantity = $_POST['quantity'];
-  print_r($cartId);die;
+  // print_r($cartId);die;
   $update_quantity_cart = $ct->update_quantity_cart($quantity, $cartId);
   if ($quantity <= 0) {
     $delcart = $ct->del_product_cart($cartId);

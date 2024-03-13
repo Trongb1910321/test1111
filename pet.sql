@@ -188,7 +188,7 @@ CREATE TABLE `tbl_order` (
   `date_order` datetime(6) NOT NULL DEFAULT current_timestamp(6),
   `status` int(6) NOT NULL DEFAULT 0,
   `cartId` int(11) NOT NULL,
-  `adminID` int(11) NOT NULL
+  `adminID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

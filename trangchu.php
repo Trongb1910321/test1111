@@ -2,11 +2,8 @@
 include_once 'inc/header.php';
 include_once 'inc/slider.php';
 ?>
-
 <div class="content">
-
   <div class="row">
-
     <h1 style="text-align: center;">SẢN PHẨM NỔI BẬT </h1>
     <div style="display: flex; " class="text-h1"></div>
     <?php
